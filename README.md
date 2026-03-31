@@ -1,6 +1,6 @@
 # Ad campaign performance tracker
 
-proyecto en python para automatizar el análisis de campañas de meta y google. limpia los datos, saca los kpis y te genera un excel con gráficos para no tener que hacerlo a mano.
+Proyecto en python para automatizar el análisis de campañas de meta y google. limpia los datos, saca los kpis y te genera un excel con gráficos para no tener que hacerlo a mano.
 
 ## ¿Qué hace?
 * Calcula CTR, CPC, CPL, CVR y ROAS por campaña y canal
