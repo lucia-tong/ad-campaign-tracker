@@ -1,23 +1,20 @@
-# Ad Campaign Performance Tracker
+# Ad campaign performance tracker
 
-Pipeline ETL en Python que procesa datos de campañas publicitarias multicanal, calcula KPIs de rendimiento, detecta anomalías de gasto y exporta un informe en Excel con gráficos.
+proyecto en python para automatizar el análisis de campañas de meta y google. limpia los datos, saca los kpis y te genera un excel con gráficos para no tener que hacerlo a mano.
 
 ## ¿Qué hace?
-
-- Calcula CTR, CPC, CPL, CVR y ROAS por campaña y canal
-- Detecta días con gasto anómalo (> 2σ sobre la media de la campaña)
-- Genera 4 gráficos de rendimiento
-- Exporta un Excel con 5 pestañas a `outputs/`
+* Calcula CTR, CPC, CPL, CVR y ROAS por campaña y canal
+* Detecta días con gasto anómalo (> 2σ sobre la media de la campaña)
+* Genera 4 gráficos de rendimiento automáticos
+* Exporta un Excel con 5 pestañas a la carpeta /outputs
 
 ## Estructura
 
-```
 ad-campaign-tracker/
-├── generate_data.py   # genera el CSV de prueba
-├── pipeline.py        # ETL: cálculo de KPIs, anomalías y exportación
-├── run.py             # punto de entrada
+├── generate_data.py   # genera el csv de prueba para practicar
+├── pipeline.py        # lógica del etl y exportación
+├── run.py             # punto de entrada principal
 └── requirements.txt
-```
 
 ## Cómo ejecutarlo
 
@@ -25,22 +22,18 @@ ad-campaign-tracker/
 pip install -r requirements.txt
 python run.py
 ```
+Al ejecutar, si no existe data/campaigns.csv se genera automáticamente. Los resultados se guardan en outputs/.
 
-Al ejecutar, si no existe `data/campaigns.csv` se genera automáticamente. Los resultados se guardan en `outputs/`.
+## KPIs principales
 
-## KPIs calculados
+Para no calcular todo a mano, el script saca esto:
 
-| Métrica | Fórmula |
-|---------|---------|
-| CTR | Clicks / Impresiones |
-| CPC | Gasto / Clicks |
-| CPL | Gasto / Conversiones |
-| CVR | Conversiones / Clicks |
-| ROAS | Ingresos estimados / Gasto |
+* **CTR:** clicks / impresiones
+* **CPC:** gasto / clicks
+* **CPL:** gasto / conversiones
+* **CVR:** conversiones / clicks
+* **ROAS:** ingresos / gasto
 
 ## Stack
 
 Python · Pandas · NumPy · Matplotlib · OpenPyXL
-
----
-Lucia Kai Li Tong Medina · [LinkedIn](https://linkedin.com/in/lucia-tong-)
